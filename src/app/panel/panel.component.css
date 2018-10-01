@@ -1,0 +1,24 @@
+section {
+  width: 960px;
+  margin: 0 auto;
+}
+nav {
+  border: solid 1px #DDD;
+  border-left: none;
+  border-right: none;
+}
+nav > a {
+  display: inline-block;
+  padding: .5rem 2rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: #333;
+}
+nav > a.active {
+  background-color: rgb(207, 59, 0);
+  color: #FFF;
+}
+nav > a:not(.active):hover {
+  background-color: rgb(253, 75, 5);
+  color: #FFF;
+}
