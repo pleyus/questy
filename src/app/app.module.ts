@@ -6,10 +6,17 @@ import { AppComponent } from './app.component';
 import { ViewerComponent } from './viewer/viewer.component';
 import { PanelComponent } from './panel/panel.component';
 import { HeaderComponent } from './panel/header/header.component';
+import { BankComponent } from './bank/bank.component';
 
 const appRoutes: Routes = [
   { path: 'view', component: ViewerComponent },
-  { path: 'panel', component: PanelComponent },
+  {
+    path: 'panel',
+    component: PanelComponent,
+    children: [
+      { path: 'bank', component: BankComponent }
+    ]
+  },
   { path: '', redirectTo: '/panel', pathMatch: 'full' }
 ];
 @NgModule({
@@ -17,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     ViewerComponent,
     PanelComponent,
-    HeaderComponent
+    HeaderComponent,
+    BankComponent
   ],
   imports: [
     RouterModule.forRoot( appRoutes ),
